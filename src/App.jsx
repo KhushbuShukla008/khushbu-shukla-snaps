@@ -5,6 +5,7 @@ import tags from "./data/tags.json";
 import photos from "./data/photos.json";
 import "./App.scss";
 import FilterIcon from "./assets/icons/Filter.svg"
+import Header from "./components/Header/Header";
 
 function App() {
   console.log("render App comp");
@@ -16,8 +17,8 @@ function App() {
 
   return (
     <div className="app">
+      <div className="app__top-row"></div>
       <h1 className="app__header">Snaps</h1>
-      {/* <div>selected tag: {selectedTag ? selectedTag : "no tag selected"}</div> */}
       <div>
         <button
           onClick={() => {
@@ -28,7 +29,6 @@ function App() {
           <img src={FilterIcon} className="filter-icon" />
         </button>
       </div>
-      {/* count: {count} */}
       <div className="app__content">
         {/* drawer */}
         <div className={`drawer ${drawerOpen ? "drawer--open" : ""}`}>
@@ -50,15 +50,14 @@ function App() {
             ))}
           </ul>
         </div>
-        {/* photo list */}
-        {/* instead of entire array... FILTER to only include items who's 'tags' includes 'selectedTag' */}
-        {/* IF selectedTag is null... show entire array */}
+        {/* <Header /> */}
         <div className="photo-list">
           {filteredPhotos.map((photo) => {
             return <PhotoCard photo={photo} key={photo.id} setGlobalCounter={setCount} />;
           })}
         </div>
       </div>
+      {/* <Header></Header> */}
     </div>
   );
 }

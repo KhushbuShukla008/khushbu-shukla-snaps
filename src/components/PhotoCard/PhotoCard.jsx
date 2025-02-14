@@ -18,10 +18,7 @@ function PhotoCard({ photo, setGlobalCounter }) {
           <Tag tag={tag} key={tag} setCount={setGlobalCounter} />
         ))}
       </div>
-      <div className="photo__counter">
-        Local counter:
-        <button onClick={() => setCount(count + 1)}>{count}</button>
-      </div>
+      
     </div>
   );
 }
