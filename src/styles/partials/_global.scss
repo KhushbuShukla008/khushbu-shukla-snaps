@@ -1,0 +1,22 @@
+@use "./typography";
+@use "./mixins";
+@use "./variables" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+button {
+  font-size: 1.3rem;
+  font-family: "Outfit";
+  background-color: $primary-pistachio;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}

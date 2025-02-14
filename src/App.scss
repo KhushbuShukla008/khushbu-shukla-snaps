@@ -1,0 +1,43 @@
+@use "./styles/partials/global";
+@use "./styles/partials/mixins" as *;
+
+.app {
+  display: flex;
+  flex-direction: column;
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      gap: 4rem;
+    }
+  }
+}
+
+.drawer {
+  display: none;
+
+  @include desktop {
+    width: 400px;
+  }
+
+  &--open {
+    display: block;
+  }
+}
+
+.photo-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @include desktop {
+    flex: 1;
+  }
+}
+.filter-icon{
+  width: 40px;
+  height: 40px;
+}

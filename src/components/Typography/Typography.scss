@@ -1,0 +1,11 @@
+@use "../../styles/partials/mixins" as *;
+
+.label {
+  font-size: 12px;
+  line-height: 15px;
+
+  @include desktop {
+    font-size: 19px;
+    line-height: 19.5px;
+  }
+}
