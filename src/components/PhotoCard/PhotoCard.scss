@@ -1,3 +1,7 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global";
+@use "../../styles/partials/variables" as *;
+
 .photo {
     width: 28.5rem;
     // border: 5px solid coral;
@@ -10,7 +14,7 @@
     &__content {
       position: relative;
       display: flex;
-      border: 3px solid lightgreen;
+      border: 3px solid $secondary-sea-green;
       border-radius: 10px;
       overflow: hidden;
     }
@@ -21,7 +25,7 @@
   
     &__photographer {
       position: absolute;
-      background-color: lightgreen;
+      background-color:$secondary-sage;
       border-top-left-radius: 10px;
       padding: 0.2rem;
       right: 0;

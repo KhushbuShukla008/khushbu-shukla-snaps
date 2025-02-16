@@ -6,7 +6,9 @@ import PinterestIcon from "../../assets/icons/Pinterest.svg";
 function Footer() {
   return (
     <section className="footer">
-      <div className="footer__title">Snaps</div>
+      <div className="footer__title">
+        <h1>Snaps</h1>
+        </div>
       <div className="footer__for">
         <h3>For Photographers</h3>
         <p>Hire talent</p>

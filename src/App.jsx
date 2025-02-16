@@ -1,11 +1,13 @@
 import { useState } from "react";
-import Tag from "./components/Tag/Tag";
-import PhotoCard from "./components/PhotoCard/PhotoCard";
 import tags from "./data/tags.json";
 import photos from "./data/photos.json";
 import "./App.scss";
-import FilterIcon from "./assets/icons/Filter.svg"
+import FilterButton from "./components/FilterButton/FilterButton";
 import Header from "./components/Header/Header";
+import Footer from "./components/footer/footer";
+import FilterDrawer from "./components/FilterDrawer/FilterDrawer";
+import PhotoList from "./components/Photolist/PhotoList";
+
 
 function App() {
   console.log("render App comp");
@@ -17,48 +19,20 @@ function App() {
 
   return (
     <div className="app">
-      <div className="app__top-row"></div>
+      <div className="app__nav-container"></div>
       <h1 className="app__header">Snaps</h1>
-      <div>
-        <button
-          onClick={() => {
-            setDrawerOpen(!drawerOpen);
-          }}
-        >
-          <span>Filters</span>
-          <img src={FilterIcon} className="filter-icon" />
-        </button>
+      <div className="app__filter">
+        <FilterButton drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />  
       </div>
       <div className="app__content">
-        {/* drawer */}
-        <div className={`drawer ${drawerOpen ? "drawer--open" : ""}`}>
-          {/* filter list */}
-          <ul>
-            {tags.map((tag) => (
-              <li
-                key={tag}
-                onClick={() => {
-                  if (selectedTag === tag) {
-                    setSelectedTag(null);
-                  } else {
-                    setSelectedTag(tag);
-                  }
-                }}
-              >
-                <Tag tag={tag} isClickable selectedTag={selectedTag} setCount={setCount} />
-              </li>
-            ))}
-          </ul>
-        </div>
-        {/* <Header /> */}
-        <div className="photo-list">
-          {filteredPhotos.map((photo) => {
-            return <PhotoCard photo={photo} key={photo.id} setGlobalCounter={setCount} />;
-          })}
-        </div>
+      <FilterDrawer tags={tags} selectedTag={selectedTag} setSelectedTag={setSelectedTag} setCount={setCount} drawerOpen={drawerOpen} />
       </div>
-      {/* <Header></Header> */}
-    </div>
+      <Header />
+      <div className="app__photo-list">
+        <PhotoList filteredPhotos={filteredPhotos} setCount={setCount} />
+      </div>
+      <Footer />
+    </div>   
   );
 }
 
