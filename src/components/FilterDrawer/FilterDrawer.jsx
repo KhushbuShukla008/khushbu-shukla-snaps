@@ -1,4 +1,5 @@
 import Tag from "../Tag/Tag";
+import "./FilterDrawer.scss";
 
 const FilterDrawer = ({
   tags,
@@ -9,6 +10,7 @@ const FilterDrawer = ({
 }) => {
   return (
     <div className={`drawer ${drawerOpen ? "drawer--open" : ""}`}>
+      <h3 className="app__filter">Filters</h3>
       {/* filter list */}
       <ul>
         {tags.map((tag) => (

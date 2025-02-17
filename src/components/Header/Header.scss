@@ -2,11 +2,27 @@
 @use "../../styles/partials/global";
 @use "../../styles/partials/variables" as *;
 
-
-
 .italic-text {
-    font-style: italic;
+      font-style: italic;
+      @include title-mobile;
+  
+  @include tablet{
+    @include title-tablet;
+    
+  }
   }
 .header__title{
-   @include body-copy-mobile;
+  @include heading-mobile;
+
+  @include tablet{
+    @include heading-tablet;
+  }
+}
+.header__description{
+  @include title-mobile;
+  
+  @include tablet{
+    @include title-tablet;
+    
+  }
 }

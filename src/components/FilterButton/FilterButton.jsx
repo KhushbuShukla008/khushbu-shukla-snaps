@@ -1,5 +1,5 @@
 import FilterIcon from "../../assets/icons/Filter.svg";
-
+import "./FilterButton.scss";
 function FilterButton({drawerOpen, setDrawerOpen}){
     return(
          <button className="app__filter-button"

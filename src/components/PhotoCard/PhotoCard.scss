@@ -3,19 +3,27 @@
 @use "../../styles/partials/variables" as *;
 
 .photo {
-    width: 28.5rem;
-    // border: 5px solid coral;
-    border-radius: 4px;
-    padding: 1rem;
+    width: 100%;
+    border: 1px solid $secondary-color-1;
+    background-color: $secondary-color-2;
+    border-radius: 10px;
+    padding-bottom: 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    @include tablet{
+      width: 46.5%;
+        margin: 0.5rem;
+    }
+    @include desktop{
+      width: 46%;
+    }
   
     &__content {
       position: relative;
       display: flex;
-      border: 3px solid $secondary-color-1;
-      border-radius: 10px;
+      border: 1px solid $secondary-color-1;
+      border-radius: 10px 10px 0 0;
       overflow: hidden;
     }
   
@@ -27,14 +35,18 @@
       position: absolute;
       background-color:$secondary-color-2;
       border-top-left-radius: 10px;
-      padding: 0.2rem;
+      padding: 1rem;
       right: 0;
       bottom: 0;
     }
   
     &__tags {
       display: flex;
-      gap: 0.1rem;
+      gap: 0.5rem;
+      margin-left: 1rem;
+      margin-bottom: 0rem;
+      margin-top: 0.5rem;
+      
     }
   }
   

@@ -2,21 +2,37 @@
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/variables" as *;
 
+.main__body{
+  display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  @include desktop{
+    display: flex;
+    flex-direction: row-reverse !important;
+    flex-wrap: nowrap !important;
+  }
+}
 .app {
   display: flex;
   flex-direction: column;
+  
+  &__nav-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: anchor-center;
+  }
+  &__header{
+    @include title-mobile;
 
+    @include tablet{
+      @include title-tablet;
+    }
+  }
   &__filter{
     justify-content:space-between ;
     }
-  &__filter-button
-  {
-    padding: 8px 16px;
-    border: 3px solid $primary-color-2;
-    border-radius: 20px;
-    background-color: $secondary-color-3;
-    color: $primary-color-2;
-  }
+  
   &__content {
     display: flex;
     flex-direction: column;
@@ -25,8 +41,15 @@
       flex-direction: row-reverse;
       justify-content: flex-end;
       gap: 4rem;
+      
     }
   }
+  &__body{
+    margin-right: -2rem;
+    @include desktop{
+    margin-right: 2rem !important;
+  }
+}
 
 }
 
@@ -36,11 +59,17 @@
   
 
   @include desktop {
-    width: 400px;
+    width: 32vw;
+    
   }
 
   &--open {
-    display: block;
+    display: flex    ;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 2rem;
+        margin: 0rem -2rem;
+    background-color: $secondary-color-2;
   }
 }
 
@@ -56,4 +85,10 @@
 .filter-icon{
   width: 20px;
   height: 20px;
+  margin-top: 2px;
+  @include tablet{
+    width: 26px;
+    margin-top: 3px;
+  }
+  
 }

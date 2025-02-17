@@ -1,0 +1,30 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global";
+@use "../../styles/partials/variables" as *;
+
+span{
+    margin-right: 8px;
+    margin-top: 3px;
+    @include body-copy-mobile;
+    
+    @include tablet{
+        @include body-copy-tablet;
+        margin-top: 0px;
+        
+    }
+}
+.app__filter-button
+  { display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px 16px;
+    border: 2px solid $primary-color-2;
+    border-radius: 50px;
+    background-color: $secondary-color-3;
+    color: $primary-color-2;
+
+    @include tablet{
+    padding: 11px 22px;   
+    }
+  }
+  

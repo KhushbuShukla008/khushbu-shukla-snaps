@@ -1,0 +1,13 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global";
+@use "../../styles/partials/variables" as *;
+
+
+.app__filter{
+    @include heading-mobile;
+    font-weight: 600;
+    @include tablet{
+        @include heading-tablet;
+        font-weight: 600;
+    }
+}

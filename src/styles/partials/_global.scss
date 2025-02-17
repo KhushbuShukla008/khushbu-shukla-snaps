@@ -6,16 +6,17 @@
   box-sizing: border-box;
 }
 
-body,
-button {
-  
+body{
+  margin: 0 2rem;
   background-color: $primary-color-3;
 }
-
+button{
+  background-color: $primary-color-3; 
+}
 ul {
   list-style-type: none;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3rem;
+  gap: 0.5rem;
 }

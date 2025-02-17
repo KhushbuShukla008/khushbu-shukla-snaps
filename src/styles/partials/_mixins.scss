@@ -12,7 +12,7 @@
   }
 }
 @mixin watermark-mobile {
-  font-family: 'Newsreader', serif;
+  font-family: 'Newsreader';
   font-size: 32px;
   font-weight: 400;
   line-height: 32px;
@@ -20,14 +20,14 @@
 }
 
 @mixin watermark-tablet {
-  font-family: 'Newsreader', serif;
+  font-family: 'Newsreader';
   font-size: 40px;
   font-weight: 400;
   line-height: 40px;
   @content;
 }
 @mixin watermark-desktop {
-  font-family: 'Newsreader', serif;
+  font-family: 'Newsreader';
   font-size: 40px;
   font-weight: 400;
   line-height: 40px;
@@ -35,7 +35,7 @@
 }
 
 @mixin title-mobile {
-  font-family: 'Newsreader', serif;
+  font-family: 'Newsreader';
   font-size: 26px;
   font-weight: 300;
   line-height: 38px;
@@ -43,14 +43,14 @@
 }
 
 @mixin title-tablet {
-  font-family: 'Newsreader', serif;
+  font-family: 'Newsreader';
   font-size: 52px;
   font-weight: 300;
   line-height: 66px;
   @content;
 }
 @mixin title-desktop {
-  font-family: 'Newsreader', serif;
+  font-family: 'Newsreader';
   font-size: 52px;
   font-weight: 300;
   line-height: 66px;
