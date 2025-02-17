@@ -11,3 +11,137 @@
     @content;
   }
 }
+@mixin watermark-mobile {
+  font-family: 'Newsreader', serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 32px;
+  @content;
+}
+
+@mixin watermark-tablet {
+  font-family: 'Newsreader', serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 40px;
+  @content;
+}
+@mixin watermark-desktop {
+  font-family: 'Newsreader', serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 40px;
+  @content;
+}
+
+@mixin title-mobile {
+  font-family: 'Newsreader', serif;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 38px;
+  @content;
+}
+
+@mixin title-tablet {
+  font-family: 'Newsreader', serif;
+  font-size: 52px;
+  font-weight: 300;
+  line-height: 66px;
+  @content;
+}
+@mixin title-desktop {
+  font-family: 'Newsreader', serif;
+  font-size: 52px;
+  font-weight: 300;
+  line-height: 66px;
+  @content;
+}
+@mixin heading-mobile {
+  font-family: "Outfit";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+  @content;
+}
+
+@mixin heading-tablet {
+  font-family: "Outfit";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+  @content;
+}
+@mixin heading-desktop {
+  font-family: "Outfit";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+  @content;
+}
+
+@mixin body-copy-mobile {
+  font-family: "Outfit";
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  @content;
+}
+
+@mixin body-copy-tablet {
+  font-family: "Outfit";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  @content;
+}
+@mixin body-copy-desktop {
+  font-family: "Outfit";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  @content;
+}
+@mixin small-body-copy-mobile {
+  font-family: "Outfit";
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 12px;
+  @content;
+}
+
+@mixin small-body-copy-tablet {
+  font-family: "Outfit";
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  @content;
+}
+@mixin small-body-copy-desktop {
+  font-family: "Outfit";
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  @content;
+}
+@mixin label-mobile {
+  font-family: "Outfit";
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  @content;
+}
+
+@mixin label-tablet {
+  font-family: "Outfit";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17.5px;
+  @content;
+}
+@mixin label-desktop {
+  font-family: "Outfit";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17.5px;
+  @content;
+}

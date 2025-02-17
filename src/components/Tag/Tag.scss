@@ -3,23 +3,23 @@
 @use "../../styles/partials/mixins" as *;
 
 .tag {
-    background-color: $secondary-white;
-    border: 3px solid $secondary-sea-green;
+    background-color: $secondary-color-3;
+    border: 3px solid $secondary-color-1;
     border-radius: 5px;
-    color: $primary-black;
+    color: $primary-color-1;
     
   
     &--clickable {
       cursor: pointer;
       &:hover {
-        background-color:$primary-forest-green;
-        color: $secondary-white;
+        background-color:$primary-color-2;
+        color: $secondary-color-3;
       }
     }
   
     &--selected {
-      background-color: darkgreen;
-      color: whitesmoke;
+      background-color: $primary-color-2;
+      color: $secondary-color-3;
     }
   }
   

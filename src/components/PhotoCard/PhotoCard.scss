@@ -14,7 +14,7 @@
     &__content {
       position: relative;
       display: flex;
-      border: 3px solid $secondary-sea-green;
+      border: 3px solid $secondary-color-1;
       border-radius: 10px;
       overflow: hidden;
     }
@@ -25,7 +25,7 @@
   
     &__photographer {
       position: absolute;
-      background-color:$secondary-sage;
+      background-color:$secondary-color-2;
       border-top-left-radius: 10px;
       padding: 0.2rem;
       right: 0;

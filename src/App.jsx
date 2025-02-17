@@ -19,10 +19,11 @@ function App() {
 
   return (
     <div className="app">
-      <div className="app__nav-container"></div>
+      <div className="app__nav-container">
       <h1 className="app__header">Snaps</h1>
       <div className="app__filter">
         <FilterButton drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />  
+      </div>
       </div>
       <div className="app__content">
       <FilterDrawer tags={tags} selectedTag={selectedTag} setSelectedTag={setSelectedTag} setCount={setCount} drawerOpen={drawerOpen} />
