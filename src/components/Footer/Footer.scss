@@ -1,0 +1,92 @@
+@use "../../styles/partials/global";
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+h1 {
+    @include title-mobile;
+
+    @include tablet {
+        @include title-tablet;
+    }
+}
+
+p {
+    @include body-copy-mobile;
+
+    @include tablet {
+        @include body-copy-tablet;
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    &__desciption{
+    @include tablet{
+        display: flex;
+            flex-direction: row;
+            margin-bottom: 15rem;
+    }
+}
+    &__title{
+        width: 50vw;
+        @include desktop{
+            width: 45vw;   
+        }
+    }
+
+    &__for {
+        margin-bottom: 1rem;
+        width: 25vw;
+        @include desktop{
+            width: 20vw;   
+        }
+    }
+
+    &__about {
+        margin-bottom: 0.5rem;
+        @include desktop{
+            width: 10vw;
+        }
+    }
+    &__about-container{
+        @include tablet{
+            display: flex;
+            flex-direction: row;
+            margin-top: 2rem;
+            
+        }
+    }
+    &__main-container{
+        @include desktop{
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
+
+.social-media {
+    margin-top: 1rem;
+    @include desktop{
+        margin-top: 3rem;
+    }
+
+    &__images {
+        margin-right: 2rem;
+    }
+    &__icon{
+        width: 30px;
+        height: 30px;
+    }
+}
+.footer__policy-tag{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.policy{
+    color: $secondary-color-1;
+    margin-right: 1rem;
+}

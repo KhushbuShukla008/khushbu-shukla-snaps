@@ -46,30 +46,30 @@
   }
   &__body{
     margin-right: -2rem;
-    @include desktop{
-    margin-right: 2rem !important;
-  }
+    @include desktop {
+      &.drawer-open {
+        margin-right: 2rem !important;
+      }
+      &.drawer-closed {
+        margin-right: 0rem !important;
+      }
 }
-
 }
-
+}
 
 .drawer {
   display: none;
   
-
-  @include desktop {
-    width: 32vw;
-    
-  }
-
   &--open {
     display: flex    ;
-        flex-direction: column;
-        flex-wrap: wrap;
-        padding: 2rem;
-        margin: 0rem -2rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 2rem;
+    margin: 0rem -2rem;
     background-color: $secondary-color-2;
+     @include desktop {
+      width: 32vw;
+       }
   }
 }
 
@@ -80,6 +80,15 @@
 
   @include desktop {
     flex: 1;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  &.drawer-open {
+    margin-left: -2rem !important; 
+  }
+
+  &.drawer-closed {
+    margin-left: -2rem !important; 
   }
 }
 .filter-icon{

@@ -6,6 +6,7 @@
 .app__filter{
     @include heading-mobile;
     font-weight: 600;
+    margin: 0rem;
     @include tablet{
         @include heading-tablet;
         font-weight: 600;

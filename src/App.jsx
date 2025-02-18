@@ -36,9 +36,9 @@ function App() {
             drawerOpen={drawerOpen}
           />
         </div>
-        <div className="app__body">
+        <div className={`app__body ${drawerOpen ? 'drawer-open' : 'drawer-closed'}`}>
           <Header />
-          <div className="app__photo-list">
+          <div className={`photo-list ${drawerOpen ? 'drawer-open' : 'drawer-closed'}`}>
             <PhotoList filteredPhotos={filteredPhotos} setCount={setCount} />
           </div>
         </div>
