@@ -26,5 +26,27 @@ span{
     @include tablet{
     padding: 11px 22px;   
     }
+
+    &.not-clicked {
+      background-color: $secondary-color-3;
+      color: $primary-color-2;
+    }
+  
+    &.clicked {
+      background-color: $primary-color-2;
+      color: $secondary-color-3;
+    }
+  
+  }
+
+  .filter-icon {
+    
+    &.icon-not-clicked {
+      fill: $primary-color-2;
+    }
+  
+    &.icon-clicked {
+      fill: $secondary-color-3;
+    }
   }
   
