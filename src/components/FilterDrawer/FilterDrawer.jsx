@@ -1,4 +1,4 @@
-import Tag from "../Tag/Tag";
+import Tag from "../Tags/Tags";
 import "./FilterDrawer.scss";
 
 const FilterDrawer = ({

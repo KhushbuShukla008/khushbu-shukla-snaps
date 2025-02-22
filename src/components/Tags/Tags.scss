@@ -1,0 +1,36 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global";
+@use "../../styles/partials/mixins" as *;
+
+.tag {
+    background-color: $secondary-color-3;
+    border: 2px solid $secondary-color-1;
+    border-radius: 10px;
+    color: $primary-color-1;
+    padding: 6px 8px;
+    @include label-mobile;
+
+    @include tablet{
+      padding: 8px 12px;
+      @include label-tablet;
+    }
+    
+  
+    &--clickable {
+      cursor: pointer;
+      border: 2px solid $primary-color-2;
+      color: $primary-color-2;
+      &:hover {
+        background-color:$secondary-color-1;
+        border: 2px solid $secondary-color-1;
+        color: $primary-color-1;
+      }
+    }
+  
+    &--selected {
+      background-color: $primary-color-2;
+      color: $secondary-color-3;
+      border: 2px solid $primary-color-2;
+    }
+  }
+  
