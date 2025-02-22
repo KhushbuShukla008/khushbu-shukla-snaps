@@ -1,14 +1,18 @@
-import { useState } from "react";
 import Tag from "../Tags/Tags";
 import "./PhotoCard.scss";
+import { useNavigate } from "react-router-dom";
 
 function PhotoCard({ photo, setGlobalCounter }) {
   console.log(photo.photographer);
 
-  const [count, setCount] = useState(0);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/photo/${photo.id}`);
+  };
 
   return (
-    <div className="photo">
+    <div className="photo" onClick={handleClick}>
       <div className="photo__content">
         <img className="photo__image" src={photo.photo} alt={photo.photoDescription} />
         <div className="photo__photographer">{photo.photographer}</div>

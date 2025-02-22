@@ -1,5 +1,5 @@
 import { Label } from "../Typography/Typography";
-import "./Tag.scss";
+import "./Tags.scss";
 
 function Tag({ tag, isClickable = false, selectedTag, setCount }) {
   return (

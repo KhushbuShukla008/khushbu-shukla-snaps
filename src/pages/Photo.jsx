@@ -3,19 +3,19 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Tag from "../components/Tag/Tag";
 import Comments from "../components/Comments/Comments";
+import "./Photo.scss";
+import Footer from "../components/Footer/Footer";
+import NavHeader from "../components/NavHeader/NavHeader";
+import PhotoDetail from "../components/PhotoDetail/PhotoDetail";
 
 function Photo() {
   const { id } = useParams();
-
   const [photo, setPhoto] = useState(null);
   const [comments, setComments] = useState(null);
   const [newComment, setNewComment] = useState('');
 
   useEffect(() => {
     fetchPhoto();
-  }, []);
-
-  useEffect(() => {
     fetchComments();
   }, []);
 
@@ -33,16 +33,18 @@ function Photo() {
     setComments(data);
   }
 
-  const handleCommentSubmit = (e) => {
-    e.preventDefault();
-    if (newComment.trim()) {
-      axios.post(`https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}/comments`, { text: newComment })
-        .then(response => {
-          setComments([response.data, ...comments]);
-          setNewComment('');
-        })
-        .catch(error => console.error('Error posting comment:', error));
+  const handleCommentSubmit = async (comment) => {
+    const {data} = await axios.post(`https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}/comments`, 
+    { text: newComment },
+    {
+      headers: {
+        "Content-Type": "application/json",
+        "api_key": "1c1459ab-a5fe-4f24-a3d6-a9b6f153981e"
+      }
     }
+  );
+    setComments([data, ...comments]);
+    setNewComment('');
   };
 
   if (!photo || !comments) {
@@ -50,45 +52,20 @@ function Photo() {
   }
 
   return (
-    <div>
-      photo -- {id}
-      <div> title:{photo.photoDescription}</div>
-      <Comments />
-      <div>num comments: {comments.length}</div>
-      <Tag>{photo.photographer}</Tag>
-      <div>
-        <Link to="/">back</Link>
+    <div className="photo-page">
+      <NavHeader drawerOpen={false} setDrawerOpen={() => {}} isHomePage={false} />
+      <div className="photo-detail-container">
+        <PhotoDetail photo={photo} />
       </div>
-      <Comments id={id} />
+      <div className="comments-section">
+        <Comments id={id} />
+      </div>
+      <div className="back-link">
+        <Link to="/">Back</Link>
+      </div>
+      <Footer />
     </div>
   );
-    // <div className="photo-page">
-    //   <h1>{photo.photoDescription}</h1>
-    //   <img src={photo.url} alt={photo.photoDescription} />
-    //   <div>num comments: {comments.length}</div>
-    //   <Tag>{photo.photographer}</Tag>
-    //   <div className="comments">
-    //     <h2>Comments</h2>
-    //     <form onSubmit={handleCommentSubmit}>
-    //       <input
-    //         type="text"
-    //         value={newComment}
-    //         onChange={(e) => setNewComment(e.target.value)}
-    //         placeholder="Add a comment"
-    //         required
-    //       />
-    //       <button type="submit">Submit</button>
-    //     </form>
-    //     <ul>
-    //       {comments.map(comment => (
-    //         <li key={comment.id}>{comment.text}</li>
-    //       ))}
-    //     </ul>
-    //   </div>
-    //   <div>
-    //     <Link to="/">back</Link>
-    //   </div>
-    // </div>
 }
 
 export default Photo;

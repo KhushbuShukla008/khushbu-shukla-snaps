@@ -1,4 +1,5 @@
 import PhotoCard from "../PhotoCard/PhotoCard";
+import "./PhotoList.scss";
 
 const PhotoList=({filteredPhotos, setCount}) => {
     return(

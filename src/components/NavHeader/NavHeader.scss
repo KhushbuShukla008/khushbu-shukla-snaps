@@ -1,0 +1,22 @@
+@use "../../styles/partials/global";
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.app__nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; // Changed from anchor-center to center
+}
+
+.app__header {
+  @include title-mobile;
+
+  @include tablet {
+    @include title-tablet;
+  }
+}
+
+.app__filter {
+  justify-content: space-between;
+}
