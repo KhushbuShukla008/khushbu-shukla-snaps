@@ -59,7 +59,7 @@ function Home() {
         <div className={`app__body ${drawerOpen ? 'drawer-open' : 'drawer-closed'}`}>
           <Header />
           <div className={`photo-list ${drawerOpen ? 'drawer-open' : 'drawer-closed'}`}>
-            <PhotoList filteredPhotos={filteredPhotos} setCount={setCount} />
+            <PhotoList filteredPhotos={filteredPhotos} setCount={setCount} pageType="homepage"/>
           </div>
         </div>
       </div>

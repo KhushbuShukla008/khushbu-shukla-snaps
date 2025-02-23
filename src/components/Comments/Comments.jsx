@@ -7,7 +7,7 @@ import CommentList from "../CommentList/CommentList";
 export default function Comments({ id }){
     const URL = `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}/comments?api_key=1c1459ab-a5fe-4f24-a3d6-a9b6f153981e`;
       
-    const [comments, setComments] = useState(null);
+    const [comments, setComments] = useState([]);
     useEffect(() =>{
         fetchComments();
     }, []);
@@ -23,13 +23,12 @@ export default function Comments({ id }){
     
     async function postComments(commentObj) {
         try {
-         await axios.post(URL, commentObj, {
+            const { data } = await axios.post(URL, commentObj, {
             headers: {
                 "Content-Type": "application/json",
-                "api_key": "1c1459ab-a5fe-4f24-a3d6-a9b6f153981e"
               }
             });
-        fetchComments();
+            setComments([data, ...comments]);
         } catch (error) {
             console.error("Error posting comment:", error);
           }

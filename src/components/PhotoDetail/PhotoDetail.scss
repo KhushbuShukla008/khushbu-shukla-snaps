@@ -1,0 +1,110 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global";
+@use "../../styles/partials/variables" as *;
+
+
+.photo {
+    border: 1px solid $secondary-color-1;
+    background-color: $secondary-color-2;
+    border-radius: 10px;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  
+    &--large {
+      border: 3px solid $secondary-color-1;
+      width: 100%; 
+      justify-self: anchor-center;
+      @include desktop{
+        width: 70%;
+      }
+    }
+  
+    &__details {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    &__image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  
+    &__meta {
+      display: flex;
+      flex-direction: column;
+      .photo__tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: normal;
+        margin-bottom: 10px;
+        gap: 2rem; 
+        margin-top: -0.5rem;
+        @include tablet{
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  
+    
+  
+    .photo-info {
+      display: flex;
+      flex-direction: row;
+      margin: 0 1rem;
+      justify-content: space-between;
+      @include tablet{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem;
+      }
+      &__top {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        @include tablet {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          flex-grow: 1;
+        }
+        span {
+          flex-grow: 1;
+        }
+      }
+
+      &__likes,
+      &__photographer,
+      &__time {
+        @include body-copy-mobile;
+
+        @include tablet{
+          @include body-copy-tablet;
+        }
+      }
+      
+      &__likes {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+  
+        img {
+          margin-right: 5px;
+        }
+      }
+  
+      &__photographer,
+      &__time {
+        margin-bottom: 5px;
+      }
+    }
+  }
+  
+  .photo__loading {
+    text-align: center;
+    font-size: 1.5rem;
+  }

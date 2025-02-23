@@ -49,4 +49,21 @@ span{
       fill: $secondary-color-3;
     }
   }
+  .home-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+  
+        svg {
+        width: 2rem; 
+        height: 2rem; 
+        fill: $primary-color-2;
+      }
+  
+      h1 {
+        text-decoration: none !important;
+        color: $primary-color-2;
+      }
+    }
   

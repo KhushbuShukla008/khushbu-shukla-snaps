@@ -1,24 +1,60 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
 .comments-list {
-    margin-top: 20px;
+    margin-top: 1rem;
+    width: 90vw;
+    justify-self: anchor-center;
+    @include desktop{
+        width: 66vw;
+    }
+}
+.comments-count{
+    margin-bottom: -1rem;
+    @include body-copy-mobile;
+    @include tablet{
+        @include body-copy-tablet;
+    }
+}
+.comments-container{
+    width: 88vw;
+    justify-self: anchor-center;
+    @include desktop{
+    width: 75%;
+    }
+}
+.comment__description{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .comment {
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
 }
-
-.comment-name {
-    font-weight: bold;
-}
+.divider {
+    height: 3px;
+    background: $secondary-color-1;
+    border: 0;
+  }
 
 .comment-text {
     margin-top: 5px;
     margin-bottom: 5px;
+    color: $primary-color-1;
+    @include body-copy-mobile;
+    @include tablet{
+        @include body-copy-tablet;
+    }
 }
 
-.comment-date {
-    font-size: 0.8em;
-    color: #888;
+.comment-date, .comment-name {
+    color: $primary-color-2;
+    font-weight: bold;
+    @include label-mobile;
+    @include tablet{
+        @include label-tablet;
+        font-weight: bold;
+    }
 }

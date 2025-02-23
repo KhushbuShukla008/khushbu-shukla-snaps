@@ -60,9 +60,6 @@ function Photo() {
       <div className="comments-section">
         <Comments id={id} />
       </div>
-      <div className="back-link">
-        <Link to="/">Back</Link>
-      </div>
       <Footer />
     </div>
   );

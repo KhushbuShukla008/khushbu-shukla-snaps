@@ -4,26 +4,28 @@ import "./Form.scss";
 function Form({postComments}){
 const [name, setName] = useState("");
 const [comment, setComment] = useState("");
+
 const handleSubmit = (e) => {
 e.preventDefault();
 if (comment.trim() === "") {
 alert("Please fill in the comment");
 return;
 }
-postComments({ comment });
+postComments({ name, comment });
+setName("");
 setComment("");
 };
 return (
         <form onSubmit={handleSubmit} className="comment-form">
+            <label htmlFor="name">Name</label>
             <input
                 type="text"
-                placeholder="Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
             />
+            <label htmlFor="comment">Comment</label>
             <textarea
-                placeholder="Comment"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 required

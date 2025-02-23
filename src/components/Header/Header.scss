@@ -23,6 +23,10 @@
   
   @include tablet{
     @include title-tablet;
-    width: 53vw;
      }
+     
+     @include desktop{
+      @include title-desktop;
+      width: 53vw;
+       }
 }
