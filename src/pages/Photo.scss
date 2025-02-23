@@ -1,3 +1,17 @@
+@use "../styles/partials/variables" as *;
+@use "../styles/partials/mixins" as *;
+
 .photo-page{
     margin: 1rem;
+}
+.app__content{
+padding-top: 8rem;
+}
+
+.photo-detail-container{
+ padding-top: 6rem;
+
+    @include tablet{
+    padding-top: 12rem;
+}
 }

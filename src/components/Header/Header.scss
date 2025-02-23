@@ -2,6 +2,12 @@
 @use "../../styles/partials/global";
 @use "../../styles/partials/variables" as *;
 
+.header{
+    margin-top: 0rem;
+  @include desktop{
+    margin-top: 10rem;
+  }
+}
 .italic-text {
       font-style: italic;
       @include title-mobile;
@@ -17,6 +23,7 @@
   @include tablet{
     @include heading-tablet;
   }
+
 }
 .header__description{
   @include title-mobile;
@@ -26,7 +33,7 @@
      }
      
      @include desktop{
-      @include title-desktop;
+      
       width: 53vw;
        }
 }

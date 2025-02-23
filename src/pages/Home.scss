@@ -20,7 +20,7 @@
   &__content {
     display: flex;
     flex-direction: column;
-
+    padding-top: 8rem;
     @include desktop {
       flex-direction: row-reverse;
       justify-content: flex-end;
@@ -49,10 +49,15 @@
     flex-direction: column;
     flex-wrap: wrap;
     padding: 2rem;
-    margin: 0rem -2rem;
+    margin: 0 -2rem;
     background-color: $secondary-color-2;
+    @include tablet{
+      margin: 0rem -2rem;
+    }
      @include desktop {
+      margin: 0rem -2rem;
       width: 32vw;
+      margin-bottom: 2rem;
        }
   }
 }
@@ -61,7 +66,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-
+  
   @include desktop {
     flex: 1;
     gap: 1rem;

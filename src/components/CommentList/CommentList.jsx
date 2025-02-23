@@ -15,7 +15,11 @@ export default function CommentList({ comments }) {
           <div className="comment__description">
             <div className="comment-name">{comment.name}</div>
             <div className="comment-date">
-              {new Date(comment.timestamp).toLocaleDateString()}
+              {new Date(comment.timestamp).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "2-digit",
+                  day: "2-digit",
+                })}
             </div>
           </div>
           <div className="comment-text">{comment.comment}</div>

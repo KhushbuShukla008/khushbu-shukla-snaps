@@ -11,15 +11,22 @@
     }
 }
 .comments-count{
+
     margin-bottom: -1rem;
     @include body-copy-mobile;
     @include tablet{
         @include body-copy-tablet;
     }
+    @include desktop{
+        margin-left: 1rem;
+    }
 }
 .comments-container{
-    width: 88vw;
+    width: 86vw;
     justify-self: anchor-center;
+    @include tablet{
+        width: 88vw;
+    }
     @include desktop{
     width: 75%;
     }
@@ -28,6 +35,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 1rem;
 }
 
 .comment {

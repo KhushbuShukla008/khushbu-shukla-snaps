@@ -69,6 +69,7 @@
     background-color: $secondary-color-2;
      @include desktop {
       width: 32vw;
+      margin-bottom: 2rem;
        }
   }
 }
@@ -77,11 +78,15 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-
+  margin-left: 0rem;
+  @include tablet{
+  margin-left: 1rem;
+  }
   @include desktop {
     flex: 1;
     gap: 1rem;
     padding: 1rem;
+    margin-left: 0rem;
   }
   &.drawer-open {
     margin-left: -2rem !important; 
