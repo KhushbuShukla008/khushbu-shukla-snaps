@@ -52,7 +52,7 @@ function Photo() {
   }
 
   return (
-    <div className="photo-page">
+    <section className="photo-page">
       <NavHeader drawerOpen={false} setDrawerOpen={() => {}} isHomePage={false} />
       <div className="photo-detail-container">
         <PhotoDetail photo={photo} />
@@ -61,7 +61,7 @@ function Photo() {
         <Comments id={id} />
       </div>
       <Footer />
-    </div>
+    </section>
   );
 }
 

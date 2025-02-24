@@ -46,7 +46,7 @@ function Home() {
   return (
     <div className="app">
       <NavHeader drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} isHomePage={true} />
-      <div className="main__body">
+      <section className="main__body">
         <div className="app__content">
           <FilterDrawer
             tags={tags}
@@ -56,13 +56,13 @@ function Home() {
             drawerOpen={drawerOpen}
           />
         </div>
-        <div className={`app__body ${drawerOpen ? 'drawer-open' : 'drawer-closed'}`}>
+        <section className={`app__body ${drawerOpen ? 'drawer-open' : 'drawer-closed'}`}>
           <Header />
           <div className={`photo-list ${drawerOpen ? 'drawer-open' : 'drawer-closed'}`}>
             <PhotoList filteredPhotos={filteredPhotos} setCount={setCount} pageType="homepage"/>
           </div>
-        </div>
-      </div>
+        </section>
+      </section>
       <Footer />
     </div>
   );
