@@ -1,12 +1,9 @@
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import FilterButton from "../components/FilterButton/FilterButton";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import FilterDrawer from "../components/FilterDrawer/FilterDrawer";
 import PhotoList from "../components/PhotoList/PhotoList";
-import Tags from "../components/Tags/Tags";
 import "./Home.scss";
 import NavHeader from "../components/NavHeader/NavHeader";
 
@@ -16,22 +13,20 @@ function Home() {
   const [tags, setTags] = useState([]);
   const [count, setCount] = useState(0);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     fetchPhotos();
     fetchTags();
-  }, []);
+  }, [API_BASE_URL]);
 
   async function fetchPhotos() {
-    const { data } = await axios.get(
-      "https://unit-3-project-c5faaab51857.herokuapp.com/photos?api_key=1c1459ab-a5fe-4f24-a3d6-a9b6f153981e"
-    );
+    const { data } = await axios.get(`${API_BASE_URL}/photos`);
     setPhotos(data);
   }
+  
   async function fetchTags() {
-    const { data } = await axios.get(
-      "https://unit-3-project-c5faaab51857.herokuapp.com/tags?api_key=1c1459ab-a5fe-4f24-a3d6-a9b6f153981e"
-    );
+    const { data } = await axios.get(`${API_BASE_URL}/tags`);
     setTags(data);
   }
 
