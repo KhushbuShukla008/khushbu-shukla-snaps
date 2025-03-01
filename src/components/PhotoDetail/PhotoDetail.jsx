@@ -16,6 +16,7 @@ const PhotoDetail = ({ photo: data }) => {
     month: "2-digit",
     day: "2-digit",
   });
+  
   const handleLikeClick = () => {
     setIsLiked(!isLiked);
     setLikeCount(isLiked ? likeCount - 1 : likeCount + 1);

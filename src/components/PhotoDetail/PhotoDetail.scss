@@ -37,13 +37,12 @@
       flex-direction: column;
       .photo__tags {
         display: flex;
-        flex-wrap: wrap;
         justify-content: normal;
         margin-bottom: 10px;
-        gap: 2rem; 
         margin-top: -0.5rem;
         @include tablet{
           margin-top: 0.5rem;
+          gap: 2rem; 
         }
       }
     }

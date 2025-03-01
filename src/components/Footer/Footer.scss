@@ -65,7 +65,11 @@ p {
         }
     }
 }
-
+.app__header-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
 .social-media {
     margin-top: 1rem;
     @include desktop{

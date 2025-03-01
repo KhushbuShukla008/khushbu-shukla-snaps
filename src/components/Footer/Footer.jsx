@@ -1,6 +1,7 @@
 import InstagramIcon from "../../assets/icons/Instagram.svg";
 import FacebookIcon from "../../assets/icons/Facebook.svg";
 import TwitterIcon from "../../assets/icons/X_twitter.svg";
+import { Link } from "react-router-dom";
 import PinterestIcon from "../../assets/icons/Pinterest.svg";
 import "./Footer.scss";
 
@@ -10,7 +11,9 @@ function Footer() {
       <div className="footer__main-container">
       <div className="footer__desciption">
         <div className="footer__title">
+        <Link to="/" className="app__header-link">
           <h1>Snaps</h1>
+          </Link>
         </div>
         <div className="footer__about-container">
           <div className="footer__for">

@@ -14,6 +14,11 @@
   justify-content: space-between;
   align-items: center; 
 }
+.app__header-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 
 .app__header {
   margin-left: 2rem;
