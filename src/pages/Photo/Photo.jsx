@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import Comments from "../components/Comments/Comments";
+import Comments from "../../components/Comments/Comments";
 import "./Photo.scss";
-import Footer from "../components/Footer/Footer";
-import NavHeader from "../components/NavHeader/NavHeader";
-import PhotoDetail from "../components/PhotoDetail/PhotoDetail";
+import Footer from "../../components/Footer/Footer";
+import NavHeader from "../../components/NavHeader/NavHeader";
+import PhotoDetail from "../../components/PhotoDetail/PhotoDetail";
 
 function Photo() {
   const { id } = useParams();
