@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import Photo from "./pages/Photo/Photo";
+import Home from "./pages/Home";
+import Photo from "./pages/Photo";
 import "./App.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
