@@ -9,25 +9,46 @@
     width: 100%;
     margin-top: -5rem;
     justify-self: center;
-    @include desktop{
-    width: 73%;
+
+    @include desktop {
+        width: 73%;
     }
 }
 
 .comment-form input,
 .comment-form textarea {
-    
-    padding: 10px;
+
+    padding: 8px;
     border: 2px solid $secondary-color-1;
     border-radius: 10px;
     padding: 1rem;
     margin: 1rem 0;
+    min-height: 30px;
+    min-width: 280px;
+    width: 100%;
+    @include tablet {
+        padding: 8px 16px;
+        min-height: 40px;
+    }
+
+    &:focus {
+        border-color: $primary-color-2;
+    }
+
+    &:invalid {
+        border-color: #B10606;
+    }
 }
-label{
+.comment-form textarea {
+    height: 90px;
+}
+
+label {
     @include body-copy-mobile;
     margin-top: 1rem;
+    margin-bottom: 8px;
 
-    @include tablet{
+    @include tablet {
         @include body-copy-tablet;
     }
 }
@@ -43,7 +64,8 @@ label{
     cursor: pointer;
     align-self: flex-end;
     @include label-mobile;
-    @include tablet{
+
+    @include tablet {
         @include label-tablet;
     }
 }
