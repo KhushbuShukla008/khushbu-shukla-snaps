@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Comments from "../components/Comments/Comments";
 import "./Photo.scss";
 import Footer from "../components/Footer/Footer";

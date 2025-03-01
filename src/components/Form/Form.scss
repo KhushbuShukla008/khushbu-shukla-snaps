@@ -34,9 +34,12 @@
     &:focus {
         border-color: $primary-color-2;
     }
-
     &:invalid {
-        border-color: #B10606;
+        border-color: $secondary-color-1;
+    }
+
+    &.error {
+        border-color: #B10606 !important;
     }
 }
 .comment-form textarea {
