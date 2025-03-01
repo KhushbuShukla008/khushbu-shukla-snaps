@@ -5,17 +5,19 @@ import "./Comments.scss";
 import CommentList from "../CommentList/CommentList";
 
 export default function Comments({ id }){
-    const URL = `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}/comments?api_key=1c1459ab-a5fe-4f24-a3d6-a9b6f153981e`;
-      
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+    const URL = `${API_BASE_URL}/photos/${id}/comments`;
+
     const [comments, setComments] = useState([]);
     useEffect(() =>{
         fetchComments();
-    }, []);
+    }, [id]);
 
     async function fetchComments() {
         try{
         const {data} = await axios.get(URL);
-        setComments(data);
+        const sortedComments = data.sort((a, b) => b.timestamp - a.timestamp);
+        setComments(sortedComments);
         } catch (error) {
             console.error("Error fetching comments:", error);
         }      
